@@ -1,12 +1,17 @@
 <ion-view view-title=Step16 name=step16-view>
-  <ion-content class=padding>
-      <div class=list list-inset>
-        <progress max="16" value="15"></progress>
-      </div>
-      <p>{{QAlcool}}</p>
+<ion-content>
+          <progress class="progressBar" max="16" value="1"></progress>
+  </ion-content> 
+  <ion-content class="containQuestion">
+
+       <h3 class="questionText">{{QAlcool}}</h3>
+
      <div class=item range>       
 <input type=range name=volume min=0 max=30 ng-model=data.nb ng-change=drag(data.nb)></div>
 <div>{{data.nb}}</div>
-<button class=button button-block button-calm ng-click=nb()>OK</button>
-  </ion-content>
+  <div class="buttonValid">
+<button class=button button-block button-calm ng-click=nb()>Valider</button>
+</div>
+
+
 </ion-view>

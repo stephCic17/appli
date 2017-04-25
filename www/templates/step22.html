@@ -1,9 +1,10 @@
 <ion-view view-title=Step22 name=step22-view>
-  <ion-content class=padding> 
-     <div class=list list-inset>  
-      <progress max=16 value=14></progress>     
-    </div>  
-    <p>{{QTypeMedicament}}</p>
+<ion-content>
+          <progress class="progressBar" max="16" value="1"></progress>
+  </ion-content> 
+  <ion-content class="containQuestion">
+ 
+     <h3 class="questionText">{{QTypeMedicament}}</h3>
 <form name="med" ng-submit="Submit(AntiepilepsyAnswer, AntiCoagulentAnswer, AntiHighBloodAnswer, AntidepressantAnswer, InsulineAnswer)" novalidate="">
 	<ion-list>
 	  <ion-checkbox ng-hide="Epilepsy == 0" ng-model="AntiepilepsyAnswer">	{{EpileptiqueMed}}

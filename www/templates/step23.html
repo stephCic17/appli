@@ -1,12 +1,15 @@
 <ion-view view-title=Step23 name=step23-view>
-  <ion-content class=padding> 
-     <div class=list list-inset>  
-      <progress max=16 value=9></progress>     
-    </div>  
-    <p>{{QSize}}</p>    
-      <label class=item item-input>
-      <input type=number ng-model=Size placeholder=>
-      </label>
+<ion-content>
+          <progress class="progressBar" max="16" value="1"></progress>
+  </ion-content> 
+  <ion-content class="containQuestion">
+  
+     <h3 class="questionText">{{QSize}}</h3>    
+ 
+      <input class="numberInput" type=number ng-model=Size placeholder=>
+
+         <div class="buttonValid">
       <button class=button button-block button-calm ng-click=nb(Size)>{{OK}}</button>
+  </div>
   </ion-content>
 </ion-view>

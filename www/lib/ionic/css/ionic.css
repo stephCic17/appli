@@ -3929,7 +3929,7 @@ a.subdued {
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
     color: #444; }
     .bar.bar-stable .title {
-      color: #FFF; 
+      color: #000; 
       font-weight: bold;
 
     }
@@ -4096,7 +4096,6 @@ a.subdued {
 .platform-android .bar .title {
   font-size: 19px;
   line-height: 44px;
-  background-color: #2cace9;
   text-align: center;
    }
 
@@ -5701,16 +5700,11 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
  * --------------------------------------------------
  */
 .item {
-  border-color: #ddd;
-  background-color: #fff;
-  color: #444;
   position: relative;
   z-index: 2;
   display: block;
   margin: -1px;
   padding: 16px;
-  border-width: 1px;
-  border-style: solid;
   font-size: 16px; }
   .item h2 {
     margin: 0 0 2px 0;
@@ -7749,7 +7743,20 @@ input[type="color"] {
   vertical-align: middle;
   font-size: 14px;
   line-height: 16px; }
+input[type="number"]{
 
+  -moz-appearance: textfield;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin:0;
+}
+input::-o-inner-spin-button,
+input::-o-outer-spin-button { 
+  -o-appearance: none;
+  margin:0
+}
 .platform-ios input[type="datetime-local"],
 .platform-ios input[type="date"],
 .platform-ios input[type="month"],
@@ -7788,7 +7795,6 @@ input[type="date"],
 input[type="month"],
 input[type="time"],
 input[type="week"],
-input[type="number"],
 input[type="email"],
 input[type="url"],
 input[type="search"],
@@ -7862,8 +7868,8 @@ input[type="checkbox"][readonly] {
     border-color: #ddd; }
   .checkbox input:checked:before,
   .checkbox input:checked + .checkbox-icon:before {
-    background: #387ef5;
-    border-color: #387ef5; }
+    background: rgb(230,230,230);
+    border-color: rgb(230,230,230); }
 
 .checkbox-light input:before,
 .checkbox-light .checkbox-icon:before {
@@ -7996,7 +8002,7 @@ input:checked + .checkbox-icon:before {
   display: table;
   width: 14px;
   height: 6px;
-  border: 1px solid #fff;
+  border: 1px solid rgb(117,171,179);
   border-top: 0;
   border-right: 0;
   content: ' ';
@@ -8570,17 +8576,24 @@ select[multiple], select[size] {
  */
 progress {
   display: block;
-  margin: 15px auto;
-  width: 100%; }
+  width: 100%; 
+  background: #FFF;
+}
 
+progress[value]{
+  background-color: #FFF;
+}
+progress::-webkit-progress-value { background: rgb(217,157,164); }
+progress { color: rgb(217,157,164); }
+progress::-moz-progress-bar { background: rgb(217,157,164); }
 /**
  * Buttons
  * --------------------------------------------------
  */
 .button {
   border-color: transparent;
-  background-color: #f8f8f8;
-  color: #444;
+  background-color: RGB(106,144,149);
+  color: #FFF;
   position: relative;
   display: inline-block;
   margin: 0;
@@ -8710,14 +8723,15 @@ progress {
         color: #fff; }
   .button.button-calm {
     border-color: transparent;
-    background-color: #80a5d4;
+    background-color: rgb(106,144,149);
     color: #fff; }
     .button.button-calm:hover {
       color: #fff;
       text-decoration: none; }
     .button.button-calm.active, .button.button-calm.activated {
-      border-color: #245bfa;
-      background-color: #313f68; }
+      border-color: rgb(110,148,155);
+      background-color: rgb(110,148,155);
+       }
     .button.button-calm.button-clear {
       border-color: transparent;
       background: none;
@@ -9739,7 +9753,7 @@ a.button {
   z-index: 10; }
   [nav-bar-transition="ios"] [nav-bar="active"] .bar,
   [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
-    background: #2cace9; }
+    background: #FFF; }
 
 [nav-bar-transition="ios"] [nav-bar="cached"] {
   display: block; }
@@ -9778,7 +9792,7 @@ a.button {
   z-index: 10; }
   [nav-bar-transition="android"] [nav-bar="active"] .bar,
   [nav-bar-transition="android"] [nav-bar="entering"] .bar {
-    background: #2cace9; }
+    background: #FFF; }
 
 [nav-bar-transition="android"] [nav-bar="cached"] {
   display: block; }
