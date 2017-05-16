@@ -27,6 +27,14 @@ $scope.test = function(){
 	$scope.nb = function(HAge) {
 		$rootScope.Age = HAge;
 		if ($rootScope.Age > 0){
+			if ($rootScope.Age > 42)
+				$rootScope.score = 50;
+			else if ($rootScope.Age == 42)
+				$rootScope.score = 20;
+			else if ($rootScope.Age > 38)
+				$rootScope.score = 2;
+			else 
+				$rootScope.score = 0;
 			$state.go('step2');
 		}
 	}
@@ -105,7 +113,6 @@ $scope.test = function(){
 				$rootScope.Pregnant = 1;
 			else
 				$rootScope.Pregnant = 0;
-			console.log($rootScope.Pregnant);
 			$state.go('step3');
 		}
 })
@@ -180,8 +187,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true){
 				$rootScope.Smoke = 1;
+				$rootScope.score += 2;
+			}
 			else
 				$rootScope.Smoke = 0;
 			$state.go('step4');
@@ -351,9 +360,11 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true){
 				$rootScope.BigChild = 1;
-			else
+				$rootScope.score += 50;
+				}
+			else 
 				$rootScope.BigChild = 0;
 			$state.go('step8');
 		}
@@ -430,6 +441,7 @@ $scope.test = function(){
 		$scope.Submit = function(yes, no){
 			if (yes==true){
 				$rootScope.LessChild = 1;
+				$rootScope.score += 50;
 				$state.go('step9');
 			}
 			else {
@@ -508,8 +520,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true) {
 				$rootScope.Prema = 1;
+				$rootScope.score += 50;
+			}
 			else
 				$rootScope.Prema = 0;
 			$state.go('step10');
@@ -585,8 +599,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true) {
 				$rootScope.PreEclamp = 1;
+				$rootScope.score += 50;
+			}
 			else
 				$rootScope.PreEclamp = 0;
 			$state.go('step11');
@@ -663,8 +679,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true) {
 				$rootScope.PregnantDiabete = 1;
+				$rootScope.score += 2;
+			}
 			else
 				$rootScope.PregnantDiabete = 0;
 			$state.go('step13');
@@ -678,9 +696,12 @@ $scope.test = function(){
 		url = ""
 	$scope.nb = function(NbCesa) {
 		$rootScope.NbCesa = NbCesa;
-		if ($rootScope.NbCesa >= 0){
+		if ($rootScope.NbCesa > 0){
+			$rootScope.score += 2;
 			$state.go('step13');
 		}
+		else if ($rootScope.nbCesa == 0)
+			$state.go('step13');	
 	}
 })
 
@@ -756,6 +777,7 @@ $scope.test = function(){
 		$scope.Submit = function(yes, no){
 			if (yes==true){
 				$rootScope.Miscarriage= 1;
+				$rootScope.score += 2;
 				$state.go('step14');
 			}
 			else {
@@ -845,8 +867,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true) {
 				$rootScope.IMG = 1;
+				$rootScope.score += 2;
+			}
 			else
 				$rootScope.IMG = 0;
 			$state.go('step16');
@@ -860,6 +884,9 @@ $scope.test = function(){
 	$scope.nb = function() {
 		$rootScope.Alcool = $scope.data.nb;
 		if ($rootScope.Alcool >= 0){
+			if ($rootScope.Alcool > 10){
+				$rootScope.score == 400;
+			}
 			$state.go('step17');
 		}
 	}
@@ -935,8 +962,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true) {
+				$rootScope.score += 200;
 				$rootScope.Epilepsy = 1;
+			}
 			else
 				$rootScope.Epilepsy = 0;
 			$state.go('step18');
@@ -1013,8 +1042,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true) {
 				$rootScope.Phlebitis = 1;
+				$rootScope.score += 2;
+			}
 			else
 				$rootScope.Phlebitis = 0;
 			$state.go('step19');
@@ -1090,8 +1121,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true){
 				$rootScope.HighBloodPresure = 1;
+				$rootScope.score += 2;
+			}
 			else
 				$rootScope.HighBloodPresure = 0;
 			$state.go('step20');
@@ -1101,7 +1134,7 @@ $scope.test = function(){
 
 
 .controller('Step20Ctrl', function($scope, $state,  $http, $rootScope) {
-			$scope.data = {};
+	$scope.data = {};
 	$scope.test = 
 		url = ""
 			$scope.yeschecked = function(yes, no){
@@ -1169,8 +1202,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true) {
 				$rootScope.diabetesH = 1;
+				$rootScope.score += 200;
+			}
 			else
 				$rootScope.diabetesH = 0;
 			$state.go('step21');
@@ -1264,9 +1299,17 @@ $scope.test = function(){
 	url = ""
 	$scope.Submit = function(AntiepilepsyAnswer, AntiCoagulentAnswer, AntiHighBloodAnswer, AntidepressantAnswer, InsulineAnswer){
 		$rootScope.AntiepilepsyAnswer = AntiepilepsyAnswer;
+		if ($rootScope.AntiepilepsyAnswer == 1)
+				$rootScope.score += 200;
 		$rootScope.AntiCoagulentAnswer = AntiCoagulentAnswer;
+		if ($rootScope.AntiCoagulentAnswer == 1)
+				$rootScope.score += 200;
 		$rootScope.AntiHighBloodAnswer = AntiHighBloodAnswer;
+		if ($rootScope.AntiHighBloodAnswer == 1)
+				$rootScope.score += 2;
 		$rootScope.AntidepressantAnswer = AntiCoagulentAnswer;
+		if ($rootScope.AntidepressantAnswer == 1)
+				$rootScope.score += 2;
 		$rootScope.InsulineAnswer = InsulineAnswer;
 		$state.go('step23');
 	}
@@ -1290,7 +1333,14 @@ $scope.test = function(){
 	$scope.nb = function(Weight){
 		$rootScope.Weight = Weight;
 		$rootScope.IMC = $rootScope.Weight / Math.pow($rootScope.Size/100, 2);
-		console.log($rootScope.IMC);
+		if ($rootScope.IMC > 28)
+			$rootScope.score += 200;
+		else if ($rootScope.IMC > 22)
+			$rootScope.score += 20;			
+		else if ($rootScope.IMC > 17)
+			$rootScope.score += 0;			
+		else if ($rootScope.IMC < 17)
+			$rootScope.score += 50;			
 		$state.go('step25');
 	}
 })
@@ -1381,6 +1431,9 @@ $scope.test = function(){
 	$scope.url = ""
 	$scope.nb = function(NbWork){
 		$rootScope.NbWork = NbWork;
+		if ($rootScope.NbWork > 10)
+			$rootScope.score += 2;			
+		
 		$state.go('step27');
 	}
 })
@@ -1391,6 +1444,8 @@ $scope.test = function(){
 	$scope.url = ""
 	$scope.nb = function(TimeTravel){
 		$rootScope.TimeTravel = TimeTravel;
+		if ($rootScope.TimeTravel > 90)
+			$rootScope.score += 2;			
 		$state.go('step28');
 	}
 })
@@ -1464,8 +1519,10 @@ $scope.test = function(){
 			}
 		}
 		$scope.Submit = function(yes, no){
-			if (yes==true)
+			if (yes==true) {
 				$rootScope.StandingWork = 1;
+				$rootScope.score += 2;
+			}
 			else
 				$rootScope.StandingWork = 0;
 			$state.go('step0');
@@ -1478,19 +1535,33 @@ $scope.test = function(){
 			$scope.data = {};
 	$scope.test = 
 		url = ""
-		$scope.profil = $rootScope.HelloFree;
-		$scope.profil += $rootScope.name;
+		if ($rootScope.score >= 200) {
+			$scope.resultProfil = "D'après vos réponse vous présentez une grossesse à haut et devez être suivi dans une maternité de type 3.";
+		}		
+		else if ($rootScope.score >= 50) {
+			$rootScope.resultProfil = "D'apres vos réponse vous présentez une grossesse à haut risque mais qui ne necessite pas un suivi dans une maternité de type 3";
+		}
+		else if ($rootScope.score >= 20) {
+			$rootScope.resultProfil = "D'apres vos réponses vous présentez une grossesse à risque ";
+		}
+		else {
+			$rootScope.resultProfil = "D'apres vos réponses vous ne présentez pas de risque particulier pour votre grossesse";
+		}
+		$rootScope.resultProfil += $rootScope.score;
+		$rootScope.resultProfil += " IMC ";
+ 		$rootScope.resultProfil += $rootScope.IMC;
+
 		if ( $rootScope.Age < 35 ){
-			$scope.profil += $rootScope.RAgeA;
+			$scope.profil = $rootScope.RAgeA;
 		}
 		else if ( $rootScope.Age < 38 ){
-			$scope.profil += $rootScope.RAgeB;
+			$scope.profil = $rootScope.RAgeB;
 		}
 		else if ( $rootScope.Age < 42 ){
-			$scope.profil += $rootScope.RAgeC;
+			$scope.profil = $rootScope.RAgeC;
 		}
 		else if ( $rootScope.Age >= 42 ){
-			$scope.profil += $rootScope.RAgeD; 
+			$scope.profil = $rootScope.RAgeD; 
 		}
 		
 		if ($rootScope.Pregnant == 1 && $rootScope.Smoke == 1){
